@@ -24,6 +24,13 @@ import {
   document.body.style.padding = 0;
   document.body.style.margin = 0;
   document.body.appendChild( renderer.domElement );
+
+  window.addEventListener('resize', () => {
+    const {innerWidth: width, innerHeight: height} = window
+    renderer.setSize(width, height)
+    camera.aspect = width / height
+    camera.updateProjectionMatrix()
+  })
    
   function animate() {
    
