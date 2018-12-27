@@ -9,6 +9,7 @@ const compiler = webpack(webpackDevConfig)
 const app = express();
 
 app
+  .use('/static', express.static(path.resolve('./static')))
   .get('/', htmlTemplate())
   .use(webpackDevMiddleware(compiler, {publicPath: webpackDevConfig.output.publicPath}))
   .listen(3000);

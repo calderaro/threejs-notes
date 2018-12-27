@@ -33,7 +33,7 @@ import {
   })
    
   function animate() {
-   
+    console.log('animate')
       requestAnimationFrame( animate );
    
       mesh.rotation.x += 0.01;
